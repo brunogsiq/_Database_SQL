@@ -95,46 +95,46 @@ WHERE ultimo_login < '2023-01-01';
 
 ### SQL SELECT
 
-> Consulta e seleção de dados.
+- Consulta e seleção de dados.
 
 ```sql
 SELECT id, nome, cargo FROM funcionarios;
 ```
 
-> Retorna todas as colunas e registros da tabela.
+- Retorna todas as colunas e registros da tabela.
 
 ```sql
 SELECT * FROM nome_da_tabela;
 ```
 
-> Retorna apenas colunas específicas.
+- Retorna apenas colunas específicas.
 
 ```sql
 SELECT coluna1, coluna2 FROM nome_da_tabela;
 ```
 
-> Consulta com filtro de registros (Where)
+- Consulta com filtro de registros (Where)
 
 ```sql
-SELECT * FROM produtos WHERE preco > 100;
+SELECT * FROM produtos WHERE preco - 100;
 SELECT * FROM pedidos WHERE status = 'entregue';
 ```
 
-> `ASC` = crescente (padrão) | `DESC` = decrescente
+- `ASC` = crescente (padrão) | `DESC` = decrescente
 
 ```sql
 SELECT * FROM clientes ORDER BY nome ASC;
 SELECT * FROM pedidos ORDER BY data DESC;
 ```
 
-> Filtrar com múltiplas condições
+- Filtrar com múltiplas condições
 
 ```sql
 SELECT * FROM vendas WHERE valor > 500 AND forma_pagamento = 'cartão';
 SELECT * FROM produtos WHERE categoria = 'Eletrônicos' OR preco < 100;
 ```
 
-> Agrupamentos e Resumos (GROUP BY + HAVING)
+- Agrupamentos e Resumos (GROUP BY + HAVING)
 
 ```sql
 SELECT categoria, COUNT(*) AS total
@@ -149,7 +149,7 @@ GROUP BY cliente_id
 HAVING SUM(valor) > 1000;
 ```
 
-> Subconsultas
+- Subconsultas
 
 ```sql
 SELECT nome FROM produtos 
@@ -328,9 +328,7 @@ ROLLBACK TO SAVEPOINT ponto_salvamento;
 - `IS NULL` ou `IS NOT NULL`
 
 
-# Exemplos com base no seu cenário (SSMS, QA) 
-
-## Vamos simular um banco fictício chamado SistemaQA com tabelas úteis para testes de software:
+## Simulando um banco fictício chamado SistemaQA com tabelas úteis para testes de software:
 
 ## 🔧 Estrutura de tabelas:
 
