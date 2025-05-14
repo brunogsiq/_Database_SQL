@@ -360,7 +360,6 @@ CREATE TABLE BugsReportados (
 	FOREIGN KEY (usuario_responsavel) REFERENCES UsuariosApp(id)
 );
 
-# 📥 Exemplos de comandos úteis
 
 ## 🔹 Consultar testes com falha nos últimos 7 dias:
 SELECT * FROM TestesFuncionais
@@ -383,36 +382,36 @@ SELECT B.titulo_bug, B.status_bug, U.nome_usuario
 FROM BugsReportados B
 JOIN UsuariosApp U ON B.usuario_responsavel = U.id;
 
-## 🎯 Filtros com WHERE
+## 🔹 Filtros com WHERE
 SELECT * FROM TestesFuncionais
 WHERE resultado = 'falha'
 AND data_execucao >= DATEADD(DAY, -7, GETDATE());
 
-## 📊 Agrupamentos (GROUP BY)
+## 🔹 Agrupamentos (GROUP BY)
 SELECT severidade, COUNT(*) AS total
 FROM BugsReportados
 GROUP BY severidade;
 
-## 🔗 Junções (JOIN)
+## 🔹 Junções (JOIN)
 SELECT B.titulo_bug, B.status_bug, U.nome_usuario
 FROM BugsReportados B
 JOIN UsuariosApp U ON B.usuario_responsavel = U.id;
 
-## 📌 Ordenação
+## 🔹 Ordenação
 SELECT nome_usuario, email
 FROM UsuariosApp
 WHERE ativo = 1
 ORDER BY data_cadastro DESC;
 
-## 🧰 Atualização
+## 🔹 Atualização
 UPDATE UsuariosApp
 SET ativo = 0
 WHERE data_cadastro < '2023-01-01';
 
-## 🧹 Exclusão
+## 🔹 Exclusão
 DELETE FROM TestesFuncionais
 WHERE resultado = 'inconclusivo';
 
-## 📦 Inserção
+## 🔹 Inserção
 INSERT INTO TestesFuncionais (nome_teste, resultado, data_execucao, responsavel)
 VALUES ('Login com senha inválida', 'falha', GETDATE(), 'Bruno QA');
