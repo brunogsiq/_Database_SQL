@@ -2,6 +2,19 @@
 
 ---
 
+### 0. Dicas e curiosidades
+
+- **Por que os camando são em maiúsculos?
+  - Por uma questão de convenção para diferenciar do nome de tabela e outras informações.
+
+- Ter diversos comandos "ativos", ou seja, não comentado, irá trazer todas as execuções, dividindo os retornos no console.
+- Caso não especifique a tabela, ou seja, utilize apenas o asterisco (SELECT *), irá trazer todas as informações da tabela.
+- Para comentar se utiliza dois sinais de menos ou traço: --
+
+- **Atalhos
+  - F5 - executará ação.
+  - 
+
 ### 1. Fundamentos de Banco de Dados 🛢️
 
 - **O que é um banco de dados?**
@@ -238,10 +251,14 @@ SELECT nome, SUBSTRING(nome, 1, 5) AS substring FROM funcionarios;
 SELECT COUNT(id) FROM funcionarios;
 ```
 
-### SQL DISTINCT
+### SQL DISTINCT: Omitir dados duplicados de um tabela
 
 ```sql
 SELECT DISTINCT cidade FROM funcionarios;
+```
+
+```sql
+SELECT coluna01, coluna02 FROM funcionarios;
 ```
 
 ### SQL DROP
